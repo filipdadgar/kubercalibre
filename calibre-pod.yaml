@@ -23,24 +23,11 @@ spec:
             # Use real NFS server export directory.
             path: "/volume1/download/epub"
             readOnly: false
-#        - name: default-token-mkc8t
-#          secret:
-#             secretName: default-token-mkc8t
-#             defaultMode: 420
       containers:
         - name: calibre
           image: aptalca/docker-rdp-calibre
-#          ports:
-#            - name: calibregui
-#              containerPort: 8080
-#              protocol: TCP
-#            - name: calibreweb
-#              containerPort: 8081
-#              protocol: TCP
           volumeMounts:
               # 'name' must match the volume name below.
               - name: epub
                 # Where to mount the volume.
                 mountPath: "/config"
-#              - name: default-token-mkc8t
-#                mountPath: /var/run/secrets/kubernetes.io/serviceaccount
